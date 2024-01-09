@@ -1,0 +1,54 @@
+spring:
+  profiles:
+    active: prod
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:dbmallapp
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:dbmallapp_qa
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:dbmallappprod
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
